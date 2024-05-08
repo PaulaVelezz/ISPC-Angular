@@ -4,7 +4,7 @@
   </div>
 
   <section class="form_login">
-    <form action="" id="form">
+    <form [formGroup]="form" id="form" (ngSubmit)="onSubmit($event)">
       <img src="assets/logo_planet.png" alt="Logo" class="logo">
       <h1>PLANET SUPER HEROES</h1>
       <h2>
@@ -14,12 +14,14 @@
         <input 
           class="controles" 
           type="text" 
+          formControlName="usuario"
           name="usuario" 
           placeholder="Usuario" 
           id="usuario"
           autocomplete="off"
           value=""
         />
+        <label for="usuario"></label>
         <small></small>
       </div>
 
@@ -27,6 +29,7 @@
         <input 
           class="controles" 
           type="password" 
+          formControlName="password"
           name="password" 
           placeholder="Contraseña" 
           id="password"
@@ -46,4 +49,3 @@
     </form>
   </section>
 </main>
-<router-outlet />
